@@ -1,0 +1,34 @@
+// 1. 
+const Turno = Object.freeze({
+    MANHA: "Manhã",
+    TARDE: "Tarde",
+    NOITE: "Noite"
+});
+
+// 2. 
+class Aluno {
+    constructor(id, nome, dataMatricula, turno) {
+        this.id = id;
+        this.nome = nome;
+        this.dataMatricula = dataMatricula;
+        this.turno = turno;
+        this.estaAtivo = true; 
+    }
+}
+
+// 3. 
+const aluno1 = new Aluno(1, "Ana Silva", "2026-02-10", Turno.MANHA);
+const aluno2 = new Aluno(2, "Carlos Souza", "2026-01-15", Turno.TARDE);
+
+console.log("--- Estado Inicial ---");
+console.log(aluno1);
+console.log(aluno2);
+
+// 4. 
+aluno1.turno = Turno.NOITE; // manha p Noite
+aluno2.estaAtivo = false;   // ativ p desativ
+
+// 5. 
+console.log("\n--- Estado Final Após Modificações ---");
+console.log(aluno1);
+console.log(aluno2);
